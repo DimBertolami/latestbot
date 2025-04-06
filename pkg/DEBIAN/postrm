@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Remove configuration files
+rm -rf /etc/cryptobot
+
+# Remove data directories
+rm -rf /opt/cryptobot

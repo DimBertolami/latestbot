@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Stop services
+systemctl stop cryptobot || true
+systemctl stop mariadb || true

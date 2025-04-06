@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Set permissions
+chown -R www-data:www-data /opt/cryptobot/{data,logs}
+chmod -R 755 /opt/cryptobot/bin
+
+# Start services
+systemctl start cryptobot
+systemctl start mariadb

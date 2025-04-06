@@ -1,0 +1,38 @@
+{
+  "app-id": "org.cryptobot.App",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "20.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "cryptobot",
+  "finish-args": [
+    "--share=network",
+    "--share=ipc",
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--device=dri",
+    "--filesystem=home",
+    "--filesystem=/etc/cryptobot",
+    "--filesystem=/opt/cryptobot"
+  ],
+  "modules": [
+    {
+      "name": "cryptobot",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -p /app/bin",
+        "mkdir -p /app/lib",
+        "mkdir -p /app/share",
+        "cp -r /opt/cryptobot/bin/* /app/bin/",
+        "cp -r /opt/cryptobot/lib/* /app/lib/",
+        "cp -r /opt/cryptobot/share/* /app/share/"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": "/opt/cryptobot",
+          "dest": "/app"
+        }
+      ]
+    }
+  ]
+}
